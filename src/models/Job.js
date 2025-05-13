@@ -1,5 +1,4 @@
-// models/Job.js
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const jobSchema = new mongoose.Schema({
   jobTitle: String,
@@ -9,4 +8,5 @@ const jobSchema = new mongoose.Schema({
   isLiked: Boolean
 });
 
-module.exports = mongoose.model('Job', jobSchema);
+const Job = mongoose.model('Job', jobSchema);
+export default Job;
