@@ -4,6 +4,8 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import connectDB from './config/db.js';
 import { getUserProfile } from './controllers/user.controller.js';
+import { generateMotivationController } from './controllers/motivationController.js';
+
 
 dotenv.config();
 await connectDB();
@@ -15,7 +17,9 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/api/v1/user/profile', getUserProfile);
+app.post('/api/v1/user/motivation', generateMotivationController);
 
 app.listen(PORT, () => {
   console.log(`🚀 서버 실행 중: http://localhost:${PORT}`);
 });
+
